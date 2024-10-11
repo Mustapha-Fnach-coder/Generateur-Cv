@@ -2,7 +2,9 @@
 import React, { useState } from 'react';
 import jsPDF from 'jspdf';
 import html2canvas from 'html2canvas';
-import './style.css'
+import './style.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
+
 
 const CvGenerator = () => {
   const [formData, setFormData] = useState({
@@ -72,112 +74,224 @@ const CvGenerator = () => {
 
   return (
     <div>
-      <h1>Formulaire CV</h1>
-      <form>
-        <label>
-          Photo de profil :
-          <input type="file" name="profilePicture" accept="image/*" onChange={handleChange} />
-        </label>
-        <br />
+          <div className="container mt-4">
+      <h1 className="text-center mb-4">Formulaire CV</h1>
+      <form className="mb-5">
+        <div className="form-group">
+          <label>Photo de profil :</label>
+          <input 
+            type="file" 
+            name="profilePicture" 
+            accept="image/*" 
+            onChange={handleChange} 
+            className="form-control"
+          />
+        </div>
 
-        <label>
-          Nom complet :
-          <input type="text" name="name" value={formData.name} onChange={handleChange} required />
-        </label>
-        <br />
+        <div className="form-group">
+          <label>Nom complet :</label>
+          <input 
+            type="text" 
+            name="name" 
+            value={formData.name} 
+            onChange={handleChange} 
+            className="form-control" 
+            required 
+          />
+        </div>
 
-        <label>
-          Titre de poste :
-          <input type="text" name="title" value={formData.title} onChange={handleChange} required />
-        </label>
-        <br />
+        <div className="form-group">
+          <label>Titre de poste :</label>
+          <input 
+            type="text" 
+            name="title" 
+            value={formData.title} 
+            onChange={handleChange} 
+            className="form-control" 
+            required 
+          />
+        </div>
 
-        <label>
-          Objectif :
-          <input type="text" name="objective" value={formData.objective} onChange={handleChange} required />
-        </label>
-        <br />
+        <div className="form-group">
+          <label>Objectif :</label>
+          <input 
+            type="text" 
+            name="objective" 
+            value={formData.objective} 
+            onChange={handleChange} 
+            className="form-control" 
+            required 
+          />
+        </div>
 
-        <label>
-          Email :
-          <input type="email" name="email" value={formData.email} onChange={handleChange} required />
-        </label>
-        <br />
+        <div className="form-group">
+          <label>Email :</label>
+          <input 
+            type="email" 
+            name="email" 
+            value={formData.email} 
+            onChange={handleChange} 
+            className="form-control" 
+            required 
+          />
+        </div>
 
-        <label>
-          Téléphone :
-          <input type="text" name="phone" value={formData.phone} onChange={handleChange} required />
-        </label>
-        <br />
+        <div className="form-group">
+          <label>Téléphone :</label>
+          <input 
+            type="text" 
+            name="phone" 
+            value={formData.phone} 
+            onChange={handleChange} 
+            className="form-control" 
+            required 
+          />
+        </div>
 
-        <label>
-          Adresse :
-          <input type="text" name="address" value={formData.address} onChange={handleChange} required />
-        </label>
-        <br />
+        <div className="form-group">
+          <label>Adresse :</label>
+          <input 
+            type="text" 
+            name="address" 
+            value={formData.address} 
+            onChange={handleChange} 
+            className="form-control" 
+            required 
+          />
+        </div>
 
-        <label>
-          Expérience professionnelle :
-          <textarea name="experience" value={formData.experience} onChange={handleChange} required />
-        </label>
-        <button type="button" onClick={() => addToList(experienceList, setExperienceList, formData.experience)}>Ajouter Expérience</button>
-        <ul>
+        <div className="form-group">
+          <label>Expérience professionnelle :</label>
+          <textarea 
+            name="experience" 
+            value={formData.experience} 
+            onChange={handleChange} 
+            className="form-control" 
+            required 
+          />
+        </div>
+        <button 
+          type="button" 
+          onClick={() => addToList(experienceList, setExperienceList, formData.experience)} 
+          className="btn btn-primary mb-2"
+        >
+          Ajouter Expérience
+        </button>
+
+        <ul className="list-group mb-3">
           {experienceList.map((exp, index) => (
-            <li key={index}>{exp}</li>
+            <li key={index} className="list-group-item">{exp}</li>
           ))}
         </ul>
-        <br />
 
-        <label>
-          Formation :
-          <textarea name="education" value={formData.education} onChange={handleChange} required />
-        </label>
-        <button type="button" onClick={() => addToList(educationList, setEducationList, formData.education)}>Ajouter Formation</button>
-        <ul>
+        <div className="form-group">
+          <label>Formation :</label>
+          <textarea 
+            name="education" 
+            value={formData.education} 
+            onChange={handleChange} 
+            className="form-control" 
+            required 
+          />
+        </div>
+        <button 
+          type="button" 
+          onClick={() => addToList(educationList, setEducationList, formData.education)} 
+          className="btn btn-primary mb-2"
+        >
+          Ajouter Formation
+        </button>
+
+        <ul className="list-group mb-3">
           {educationList.map((edu, index) => (
-            <li key={index}>{edu}</li>
+            <li key={index} className="list-group-item">{edu}</li>
           ))}
         </ul>
-        <br />
 
-        <label>
-          Loisirs :
-          <input type="text" name="hobbies" value={formData.hobbies} onChange={handleChange} />
-        </label>
-        <button type="button" onClick={() => addToList(hobbiesList, setHobbiesList, formData.hobbies)}>Ajouter Loisirs</button>
-        <ul>
+        <div className="form-group">
+          <label>Loisirs :</label>
+          <input 
+            type="text" 
+            name="hobbies" 
+            value={formData.hobbies} 
+            onChange={handleChange} 
+            className="form-control" 
+          />
+        </div>
+        <button 
+          type="button" 
+          onClick={() => addToList(hobbiesList, setHobbiesList, formData.hobbies)} 
+          className="btn btn-primary mb-2"
+        >
+          Ajouter Loisirs
+        </button>
+
+        <ul className="list-group mb-3">
           {hobbiesList.map((hobby, index) => (
-            <li key={index}>{hobby}</li>
+            <li key={index} className="list-group-item">{hobby}</li>
           ))}
         </ul>
-        <br />
 
-        <label>
-          Compétences :
-          <input type="text" name="skills" value={formData.skills} onChange={handleChange} required />
-        </label>
-        <button type="button" onClick={() => addToList(skillsList, setSkillsList, formData.skills)}>Ajouter Compétences</button>
-        <ul>
+        <div className="form-group">
+          <label>Compétences :</label>
+          <input 
+            type="text" 
+            name="skills" 
+            value={formData.skills} 
+            onChange={handleChange} 
+            className="form-control" 
+            required 
+          />
+        </div>
+        <button 
+          type="button" 
+          onClick={() => addToList(skillsList, setSkillsList, formData.skills)} 
+          className="btn btn-primary mb-2"
+        >
+          Ajouter Compétences
+        </button>
+
+        <ul className="list-group mb-3">
           {skillsList.map((skill, index) => (
-            <li key={index}>{skill}</li>
+            <li key={index} className="list-group-item">{skill}</li>
           ))}
         </ul>
-        <br />
 
-        <label>
-          Langues :
-          <input type="text" name="languages" value={formData.languages} onChange={handleChange} required />
-        </label>
-        <button type="button" onClick={() => addToList(languagesList, setLanguagesList, formData.languages)}>Ajouter Langues</button>
-        <ul>
+        <div className="form-group">
+          <label>Langues :</label>
+          <input 
+            type="text" 
+            name="languages" 
+            value={formData.languages} 
+            onChange={handleChange} 
+            className="form-control" 
+            required 
+          />
+        </div>
+        <button 
+          type="button" 
+          onClick={() => addToList(languagesList, setLanguagesList, formData.languages)} 
+          className="btn btn-primary mb-2"
+        >
+          Ajouter Langues
+        </button>
+
+        <ul className="list-group mb-3">
           {languagesList.map((language, index) => (
-            <li key={index}>{language}</li>
+            <li key={index} className="list-group-item">{language}</li>
           ))}
         </ul>
-        <br />
 
-        <button type="button" onClick={generatePDF}>Imprimer le CV en PDF</button>
+        <button 
+          type="button" 
+          onClick={generatePDF} 
+          className="btn btn-success"
+        >
+          Imprimer le CV en PDF
+        </button>
       </form>
+    </div>
+
 
       <div id="cvDisplay" style={{ display: 'block' }}>
         <div className="cv-container">
