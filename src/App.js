@@ -1,6 +1,6 @@
 // App.js
 import React from 'react';
-import CvGenerator from './CvGenerator';
+import CvGenerator from './comeponent/CvGenerator';
 
 const App = () => {
   return (
