@@ -1,107 +1,106 @@
 /* Styles généraux */
 body {
-    font-family: 'Arial', sans-serif;
-    line-height: 1.6;
-    color: #333;
-    background-color: #f4f4f4;
-    margin: 0;
-    padding: 0;
-  }
-  
-  .cv-container {
-    max-width: 900px;
-    margin: 40px auto;
-    background-color: white;
-    padding: 30px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  }
-  
-  h1, h2, h3, h4 {
-    margin-bottom: 10px;
-    color: #2c3e50;
-  }
-  
-  h1 {
-    font-size: 32px;
-  }
-  
-  h2 {
-    font-size: 20px;
-    color: #7f8c8d;
-  }
-  
-  h3 {
-    font-size: 18px;
-    border-bottom: 2px solid #3498db;
-    padding-bottom: 5px;
-    margin-top: 20px;
-    margin-bottom: 20px;
-  }
-  
-  h4 {
-    font-size: 16px;
-    color: #34495e;
-    margin-bottom: 5px;
-  }
-  
-  p {
-    margin: 0 0 10px;
-  }
-  
-  ul {
-    list-style: none;
-    padding: 0;
-  }
-  
-  li {
-    margin-bottom: 5px;
-  }
-  
-  /* En-tête */
-  header .profile {
-    display: flex;
-    align-items: center;
-  }
-  
-  .profile-picture {
-    width: 120px;
-    height: 120px;
-    border-radius: 50%;
-    margin-right: 20px;
-  }
-  
-  .contact-info {
-    max-width: 600px;
-  }
-  
-  .contact-info h1 {
-    margin-bottom: 0;
-    font-size: 32px;
-  }
-  
-  .contact-info h2 {
-    font-size: 20px;
-    color: #7f8c8d;
-  }
-  
-  /* Expérience */
-  .job {
-    margin-bottom: 20px;
-  }
-  
-  /* Compétences */
-  .skills ul {
-    columns: 2; /* Affiche en deux colonnes */
-  }
-  
-  /* Formation */
-  .school {
-    margin-bottom: 15px;
-  }
-  
-  /* Loisirs */
-  .hobbies {
-    margin-top: 20px;
-  }
-  
-  
+  font-family: 'Arial', sans-serif;
+  line-height: 1.6;
+  color: #333;
+  background-color: #f4f4f4;
+  margin: 0;
+  padding: 0;
+}
+
+.cv-container {
+  max-width: 900px;
+  margin: 40px auto;
+  background-color: white;
+  padding: 30px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+h1, h2, h3, h4 {
+  margin-bottom: 10px;
+  color: #2c3e50;
+}
+
+h1 {
+  font-size: 32px;
+}
+
+h2 {
+  font-size: 20px;
+  color: #7f8c8d;
+}
+
+h3 {
+  font-size: 18px;
+  border-bottom: 2px solid #3498db;
+  padding-bottom: 5px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+h4 {
+  font-size: 16px;
+  color: #34495e;
+  margin-bottom: 5px;
+}
+
+p {
+  margin: 0 0 10px;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+li {
+  margin-bottom: 5px;
+}
+
+/* En-tête */
+header .profile {
+  display: flex;
+  align-items: center;
+}
+
+.profile-picture {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  margin-right: 20px;
+}
+
+.contact-info {
+  max-width: 600px;
+}
+
+.contact-info h1 {
+  margin-bottom: 0;
+  font-size: 32px;
+}
+
+.contact-info h2 {
+  font-size: 20px;
+  color: #7f8c8d;
+}
+
+/* Expérience */
+.job {
+  margin-bottom: 20px;
+}
+
+/* Compétences */
+.skills ul {
+  columns: 2; /* Affiche en deux colonnes */
+}
+
+/* Formation */
+.school {
+  margin-bottom: 15px;
+}
+
+/* Loisirs */
+.hobbies {
+  margin-top: 20px;
+}
+
