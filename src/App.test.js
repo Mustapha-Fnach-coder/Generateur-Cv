@@ -1,8 +1,13 @@
-import { render, screen } from '@testing-library/react';
-import App from './App';
+import React from 'react';
+import CvGenerator from './components/CvGenerator';
 
-test('renders learn react link', () => {
-  render(<App />);
-  const linkElement = screen.getByText(/learn react/i);
-  expect(linkElement).toBeInTheDocument();
-});
+const App = () => {
+  return (
+    <div className="container mt-4">
+      <h1 className="text-center mb-4">Formulaire CV</h1>
+      <CvGenerator />
+    </div>
+  );
+};
+
+export default App;
