@@ -48,7 +48,7 @@ const CvDisplay = ({ formData, experienceList, educationList, hobbiesList, skill
       </div>
       <div className="right-column">
         <div className="header">
-          <h1>{formData.name} <span className="text-blue text-uppercase">Gomba</span></h1>
+          <h1>{formData.prenom} <span className="text-blue text-uppercase">{formData.nom}</span></h1>
           <p><strong>{formData.title}</strong></p>
           <ul className="infos">
             <li><i className="icon fas fa-at text-blue"></i> <a href={`mailto:${formData.email}`}><strong>{formData.email}</strong></a></li>

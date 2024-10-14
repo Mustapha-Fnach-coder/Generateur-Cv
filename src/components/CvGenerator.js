@@ -9,7 +9,8 @@ import { generatePDF } from '../utils/pdfGenerator';
 const CvGenerator = () => {
   const [formData, setFormData] = useState({
     profilePicture: null,
-    name: '',
+    nom: '',
+    prenom:'',
     title: '',
     objective: '',
     email: '',

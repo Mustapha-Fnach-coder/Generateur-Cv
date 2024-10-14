@@ -15,11 +15,22 @@ const PersonalInfo = ({ formData, handleChange }) => {
         />
       </div>
       <div className="form-group">
-        <label>Nom complet :</label>
+        <label>Prenom :</label>
         <input 
           type="text" 
-          name="name" 
-          value={formData.name} 
+          name="prenom" 
+          value={formData.prenom} 
+          onChange={handleChange} 
+          className="form-control" 
+          required 
+        />
+      </div>
+      <div className="form-group">
+        <label>Nom:</label>
+        <input 
+          type="text" 
+          name="nom" 
+          value={formData.nom} 
           onChange={handleChange} 
           className="form-control" 
           required 

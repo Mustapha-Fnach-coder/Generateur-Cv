@@ -1,6 +1,8 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 const Experience = ({ experienceList, setExperienceList }) => {
+  const [newExperience, setNewExperience] = useState({ entreprise: '', datedebut: '', datefin: '', taches: '' });
+
   const handleExperienceChange = (index, e) => {
     const { name, value } = e.target;
     const updatedExperienceList = [...experienceList];
@@ -8,51 +10,70 @@ const Experience = ({ experienceList, setExperienceList }) => {
     setExperienceList(updatedExperienceList);
   };
 
+  const handleNewExperienceChange = (e) => {
+    const { name, value } = e.target;
+    setNewExperience({ ...newExperience, [name]: value });
+  };
+
   const addExperience = () => {
-    setExperienceList([...experienceList, { entreprise: '', datedebut: '', datefin: '', taches: '' }]);
+    setExperienceList([...experienceList, newExperience]);
+    setNewExperience({ entreprise: '', datedebut: '', datefin: '', taches: '' }); // Reset newExperience
   };
 
   return (
     <div>
       <h4>Expérience professionnelle</h4>
-      {experienceList.map((experience, index) => (
-        <div key={index} className="form-group">
-          <label>Entreprise :</label>
-          <input
-            type="text"
-            name="entreprise"
-            value={experience.entreprise}
-            onChange={(e) => handleExperienceChange(index, e)}
-            className="form-control"
-          />
-          <label>Date de début :</label>
-          <input
-            type="date"
-            name="datedebut"
-            value={experience.datedebut}
-            onChange={(e) => handleExperienceChange(index, e)}
-            className="form-control"
-          />
-          <label>Date de fin :</label>
-          <input
-            type="date"
-            name="datefin"
-            value={experience.datefin}
-            onChange={(e) => handleExperienceChange(index, e)}
-            className="form-control"
-          />
-          <label>Tâches réalisées :</label>
-          <textarea
-            name="taches"
-            value={experience.taches}
-            onChange={(e) => handleExperienceChange(index, e)}
-            className="form-control"
-          />
-        </div>
-      ))}
+
+      {/* Form for adding new experience */}
+      <div className="form-group">
+        <label>Entreprise :</label>
+        <input
+          type="text"
+          name="entreprise"
+          value={newExperience.entreprise}
+          onChange={handleNewExperienceChange}
+          className="form-control"
+        />
+        <label>Date de début :</label>
+        <input
+          type="date"
+          name="datedebut"
+          value={newExperience.datedebut}
+          onChange={handleNewExperienceChange}
+          className="form-control"
+        />
+        <label>Date de fin :</label>
+        <input
+          type="date"
+          name="datefin"
+          value={newExperience.datefin}
+          onChange={handleNewExperienceChange}
+          className="form-control"
+        />
+        <label>Tâches réalisées :</label>
+        <textarea
+          name="taches"
+          value={newExperience.taches}
+          onChange={handleNewExperienceChange}
+          className="form-control"
+        />
+      </div>
+      
       <button type="button" onClick={addExperience} className="btn btn-primary mb-2">
         Ajouter Expérience
       </button>
+
+      {/* Display the list of experiences */}
+      <h5>Liste des expériences ajoutées :</h5>
+      <ul className="list-group">
+        {experienceList.map((experience, index) => (
+          <li key={index} className="list-group-item">
+            <strong>{experience.entreprise}</strong><br />
+            <em>{experience.datedebut} - {experience.datefin}</em><br />
+            <p>{experience.taches}</p>
+          </li>
+        ))}
+      </ul>
     </div>
   );
 };
