@@ -18,6 +18,12 @@ const Education = ({ educationList, setEducationList }) => {
   const addEducation = () => {
     setEducationList([...educationList, newEducation]);
     setNewEducation({ institution: '', datedebut: '', datefin: '', diploma: '' }); // Reset newEducation
+    };
+  const removeLastEducation = () => {
+        if (educationList.length > 0) {
+            const updatedEducationList = educationList.slice(0, -1); // Remove last item
+            setEducationList(updatedEducationList);
+        }
   };
 
   return (
@@ -64,13 +70,19 @@ const Education = ({ educationList, setEducationList }) => {
         Ajouter Formation
       </button>
 
+
+      <button type="button" onClick={removeLastEducation} className="btn btn-danger mb-2">
+              Supprimer la dernière formation
+      </button>
+
+
       {/* Display the list of educations */}
       <h5>Liste des formations ajoutées :</h5>
       <ul className="list-group">
         {educationList.map((education, index) => (
           <li key={index} className="list-group-item">
             <strong>{education.institution}</strong><br />
-            <em>{education.datedebut} - {education.datefin}</em><br />
+            <em>{education.datedebut} - {education.datefin}</em><br /> 
             <p>Diplôme : {education.diploma}</p>
           </li>
         ))}

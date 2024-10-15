@@ -19,7 +19,12 @@ const Experience = ({ experienceList, setExperienceList }) => {
     setExperienceList([...experienceList, newExperience]);
     setNewExperience({ entreprise: '', datedebut: '', datefin: '', taches: '' }); // Reset newExperience
   };
-
+    const removeLastExperience = () => {
+        if (experienceList.length > 0) {
+            const updatedExperienceList = experienceList.slice(0, -1); // Remove last item
+            setExperienceList(updatedExperienceList);
+        }
+    };
   return (
     <div>
       <h4>Expérience professionnelle</h4>
@@ -62,6 +67,11 @@ const Experience = ({ experienceList, setExperienceList }) => {
       <button type="button" onClick={addExperience} className="btn btn-primary mb-2">
         Ajouter Expérience
       </button>
+
+          <button type="button" onClick={removeLastExperience} className="btn btn-danger mb-2">
+              Supprimer la dernière formation
+       </button>
+
 
       {/* Display the list of experiences */}
       <h5>Liste des expériences ajoutées :</h5>

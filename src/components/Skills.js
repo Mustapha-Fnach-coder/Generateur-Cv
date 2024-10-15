@@ -12,6 +12,11 @@ const Skills = ({ hobbiesList, setHobbiesList, skillsList, setSkillsList, langua
     }
   };
 
+    const removeLastItem = (list, setList) => {
+        if (list.length > 0) {
+            setList((prev) => prev.slice(0, -1)); 
+        }
+    };
   return (
     <div>
       <h4>Hobbies</h4>
@@ -30,6 +35,14 @@ const Skills = ({ hobbiesList, setHobbiesList, skillsList, setSkillsList, langua
         >
           Ajouter Hobbie
         </button>
+        <button
+            type="button"
+            onClick={() => removeLastItem(hobbiesList, setHobbiesList)}
+            className="btn btn-danger mb-2"
+        >
+         Supprimer le dernier hobbie
+         </button>
+
       </div>
 
       <h4>Compétences</h4>
@@ -47,7 +60,14 @@ const Skills = ({ hobbiesList, setHobbiesList, skillsList, setSkillsList, langua
           className="btn btn-primary mb-2"
         >
           Ajouter Compétence
-        </button>
+         </button>
+              <button
+                  type="button"
+                  onClick={() => removeLastItem(skillsList, setSkillsList)}
+                  className="btn btn-danger mb-2"
+              >
+                  Supprimer le dernier hobbie
+              </button>
       </div>
 
       <h4>Langues</h4>
@@ -65,7 +85,14 @@ const Skills = ({ hobbiesList, setHobbiesList, skillsList, setSkillsList, langua
           className="btn btn-primary mb-2"
         >
           Ajouter Langue
-        </button>
+              </button>
+              <button
+                  type="button"
+                  onClick={() => removeLastItem(languagesList, setLanguagesList)}
+                  className="btn btn-danger mb-2"
+              >
+                  Supprimer le dernier hobbie
+              </button>
       </div>
     </div>
   );
