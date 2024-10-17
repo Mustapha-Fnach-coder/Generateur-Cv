@@ -20,7 +20,7 @@ const CvGenerator = () => {
   });
 
   const [experienceList, setExperienceList] = useState([
-    { entreprise: '', datedebut: '', datefin: '', taches: '' },
+    { entreprise: '', datedebut: '', datefin: '', taches: []},
   ]);
 
   const [educationList, setEducationList] = useState([

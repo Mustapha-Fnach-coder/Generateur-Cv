@@ -66,8 +66,10 @@ const CvDisplay = ({ formData, experienceList, educationList, hobbiesList, skill
                   <br />
                   {experience.entreprise}
                 </p>
-                <ul className="experience-list">
-                  <li>{experience.taches}</li>
+                <ul>
+                    {experience.taches.map((task, taskIndex) => (
+                        <li key={taskIndex}>{task}</li>
+                            ))}
                 </ul>
               </div>
             ))}

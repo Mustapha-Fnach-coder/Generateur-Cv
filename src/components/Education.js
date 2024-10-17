@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 
+
 const Education = ({ educationList, setEducationList }) => {
   const [newEducation, setNewEducation] = useState({ institution: '', datedebut: '', datefin: '', diploma: '' });
 
@@ -17,11 +18,11 @@ const Education = ({ educationList, setEducationList }) => {
 
   const addEducation = () => {
     setEducationList([...educationList, newEducation]);
-    setNewEducation({ institution: '', datedebut: '', datefin: '', diploma: '' }); // Reset newEducation
+    setNewEducation({ institution: '', datedebut: '', datefin: '', diploma: '' }); 
     };
   const removeLastEducation = () => {
         if (educationList.length > 0) {
-            const updatedEducationList = educationList.slice(0, -1); // Remove last item
+            const updatedEducationList = educationList.slice(0, -1);
             setEducationList(updatedEducationList);
         }
   };
